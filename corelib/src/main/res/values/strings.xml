@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_lbl">Não foi possivel carregar! tente de novo depois.</string>
+</resources>
