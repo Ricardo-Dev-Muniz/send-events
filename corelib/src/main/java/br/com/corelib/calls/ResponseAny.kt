@@ -7,14 +7,19 @@ import java.io.IOException
 sealed class ResponseAny<out T> {
     companion object {
 
-        fun <T> ioException(response : Response<T>) = IOException(
-            "ERROR CODE: ${response.code()} - ERROR MESSAGE: ${response.message()} - ERROR BODY: ${
-                response.errorBody()?.string()
-            }", HttpException(response)
-        )
+        private fun <T> ioException(response: Response<T>?): IOException {
+            return response?.let {
+                IOException(
+                    "ERROR CODE: ${it.code()} - ERROR MESSAGE: ${it.message()} - ERROR BODY: ${
+                        it.errorBody()?.string()
+                    }", HttpException(it)
 
-        fun <T> create(response: Response<T>): ResponseAny<T> {
-            return if (response.isSuccessful) {
+                )
+            } as IOException
+        }
+
+        fun <T> create(response: Response<T>?): ResponseAny<T> {
+            return if (response?.isSuccessful!!) {
                 val body = response.body()
 
                 if (body == null || response.code() == 204) {

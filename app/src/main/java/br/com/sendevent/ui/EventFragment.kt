@@ -47,7 +47,7 @@ class EventFragment : Fragment() {
 
     private fun initV() {
         if (mainViewModel.isScreen.value == false) {
-            suspend { callLoad(requireContext(), binding.progress, binding.main) }
+            suspend { callLoad(binding.progress, binding.main) }
             mainViewModel.isScreen(true)
         }
 
@@ -111,7 +111,7 @@ class EventFragment : Fragment() {
                     getString(R.string.confirm_peoples_zero) else event?.people.toString()
             binding.tvDate.text = event?.date.toString()
 
-            suspend { callLoad(requireContext(), binding.progress, binding.main) }
+            suspend { callLoad(binding.progress, binding.main) }
 
         }
 

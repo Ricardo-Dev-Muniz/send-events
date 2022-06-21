@@ -11,8 +11,8 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-    private lateinit var fragment: NavHostFragment
-    private lateinit var controller: NavController
+    private  var fragment: NavHostFragment? = null
+    private  var controller: NavController? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +23,6 @@ class MainActivity : AppCompatActivity() {
 
         fragment = supportFragmentManager
             .findFragmentById(R.id.fragmentContainerView) as NavHostFragment
-        controller = fragment.navController
+        controller = fragment?.navController
     }
 }

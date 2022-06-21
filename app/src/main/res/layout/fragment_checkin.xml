@@ -42,7 +42,6 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/name_text_input"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:focusable="true"
@@ -68,7 +67,6 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/email_text_input"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -152,17 +150,17 @@
             android:id="@+id/view_response"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:visibility="gone"
-            android:background="@color/purple_200">
+            android:background="@color/purple_200"
+            android:visibility="gone">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_done"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:backgroundTint="@color/green"
                 android:layout_centerInParent="true"
-                app:cardCornerRadius="100dp"
+                android:backgroundTint="@color/green"
                 android:elevation="0dp"
+                app:cardCornerRadius="100dp"
                 app:cardElevation="0dp">
 
                 <LinearLayout
@@ -173,7 +171,7 @@
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src="@drawable/ic_done"/>
+                        android:src="@drawable/ic_done" />
 
                 </LinearLayout>
 

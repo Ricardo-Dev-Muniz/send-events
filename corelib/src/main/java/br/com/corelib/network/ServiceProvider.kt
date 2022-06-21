@@ -62,7 +62,7 @@ open class ServiceProvider(
         try {
             return innerRetrofit.create(T::class.java)
         } catch (e: Exception) {
-            throw Exception("Not found service ${T::class.java}/ $e")
+            throw Exception("Not found service provider: ${T::class.java}/ $e")
         }
     }
 
